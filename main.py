@@ -23,8 +23,8 @@ sample_sentences = [
 tokenizer.pad_token = tokenizer.eos_token
 
 # 2. Tokenize the input data
-# Using the tokenizer loaded in the previous step
-input_ids = tokenizer.encode_plus(
+# Using the tokenizer loaded in the previous step, now directly call the tokenizer for batch processing
+input_ids = tokenizer(
     sample_sentences,
     return_tensors='pt',  # Return PyTorch tensors
     padding=True,         # Pad to the longest sequence in the batch
