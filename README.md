@@ -56,59 +56,6 @@ python main.py
 
 ```
 
-I have fixed the formatting issues, specifically the broken math expressions and the spacing around your graphs. I've also centered the images and ensured the LaTeX renders correctly for a professional GitHub appearance.
-
-Markdown
-
-# GPT-2 Residual Stream Analysis
-
-This project explores the **Residual Stream** of the GPT-2 architecture. It uses PyTorch forward hooks to intercept the outputs of the Attention and MLP sub-layers to analyze their relative contributions (magnitudes) across different layers of the model.
-
-## 📌 Project Overview
-
-In a Transformer block, the output is calculated as:
-
-$$x_{l+1} = x_l + \text{SubLayer}(x_l)$$
-
-This project extracts the $\text{SubLayer}(x_l)$ component (the "residual contribution") for both the **Self-Attention** and **Feed-Forward (MLP)** blocks. By calculating the $L_2$ norm of these residuals, we can visualize how the model "updates" its internal representations at each stage.
-
-## 📂 File Structure
-
-* **`main.py`**: The entry point. Orchestrates model loading, inference, and visualization.
-* **`model_utils.py`**: Handles Hugging Face model initialization and the registration/removal of PyTorch forward hooks.
-* **`data_utils.py`**: Manages text tokenization and padding logic.
-* **`analysis_utils.py`**: Contains the mathematical logic for calculating $L_2$ norms and processing tensor outputs.
-* **`plotting_utils.py`**: Generates Matplotlib visualizations for magnitude distribution and layer-wise evolution.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-* Python 3.8+
-* PyTorch
-* Transformers (Hugging Face)
-* Matplotlib
-* NumPy
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone [https://github.com/your-username/gpt2-residual-analysis.git](https://github.com/your-username/gpt2-residual-analysis.git)
-cd gpt2-residual-analysis
-Install dependencies:
-
-Bash
-
-pip install torch transformers matplotlib numpy
-Running the Analysis
-Execute the main script to process the sample sentences and generate the plots:
-
-Bash
-
-python main.py
-
-## 📊 Key Metrics Analyzed
 1. Residual Distribution
 A histogram showing the frequency of different magnitude ranges for Attention vs. MLP layers.
 
